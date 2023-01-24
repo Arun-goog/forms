@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2>Download all Forms</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Form Name</th>
+    <th style="width:40%;">Download Link</th>
+  </tr>
+  <tr>
+    <td>Pancard Form</td>
+    <td><a href="">Download</a></td>
+  </tr>
+  <tr>
+    <td>Pancard Correction Form</td>
+    <td><a href="">Download</a></td>
+  </tr>
+  <tr>
+    <td>KSEB Form</td>
+    <td><a href="https://drive.google.com/file/d/1_AY_f2uH_8yQHr5j6e-3yagylrNOb-Ku/view?usp=share_link">Download</a></td>
+  </tr>
+  <tr>
+    <td>Noncreamy Layer Affidavit</td>
+    <td><a href="https://drive.google.com/file/d/1GJQgGQZufGPGqF40W5OIy9WirguZeqFi/view?usp=share_link">Download</a></td>
+  </tr>
+  <tr>
+    <td>Possession Affidavit</td>
+    <td><a href="https://drive.google.com/file/d/1Lj1lha8_qg6dkCuMhFWu3MHv1wgH25C7/view?usp=share_link">Download</a></td>
+  </tr>
+  <tr>
+    <td>Community Affidavit</td>
+    <td><a href="https://drive.google.com/file/d/130Lyb-tBd4kwqt-XMLc324HFFeoFgQjb/view?usp=share_link">Download</a></td>
+  </tr>
+  <tr>
+    <td>Food and Safety Medical certificate</td>
+    <td><a href="https://drive.google.com/file/d/1G5Q7Wsy_Gl66AX-JpyiyAKG_pZOyr30k/view?usp=share_link">Download</a></td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
